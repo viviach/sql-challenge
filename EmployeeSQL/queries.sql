@@ -71,3 +71,11 @@ SELECT employees_info.last_name, COUNT(employees_info.last_name) AS "last_name c
 FROM employees_info
 GROUP BY employees_info.last_name
 ORDER BY "last_name count" DESC;
+
+--9.Search your ID number--ID 499942
+SELECT last_name, first_name, hire_date
+from employees_info
+WHERE emp_no=499942 --LOL!!!
+
+
+
