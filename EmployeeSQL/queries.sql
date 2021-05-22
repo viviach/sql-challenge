@@ -77,5 +77,25 @@ SELECT last_name, first_name, hire_date
 from employees_info
 WHERE emp_no=499942 --LOL!!!
 
+--10. List the following details of each employee: 
+--employee number, salary, departent name.
+SELECT employees_info.emp_no, salaries.salary, departments.dept_name
+FROM salaries
+INNER JOIN employees_info ON
+employees_info.emp_no=salaries.emp_no
+INNER JOIN employees ON
+employees_info.emp_no=employees.emp_no
+LEFT JOIN departments
+ON employees.dept_no=departments.dept_no;
+
+--11.  List the following details of each employee: 
+--title, salary.
+SELECT titles.title, salaries.salary
+FROM salaries
+INNER JOIN employees_info ON
+employees_info.emp_no=salaries.emp_no
+LEFT JOIN titles
+ON employees_info.title_id=titles.title_id
+
 
 
